@@ -1,0 +1,11 @@
+# Замените alice.example.com на свой домен, а SECRET — на случайную строку
+# (например, вывод `openssl rand -hex 12`). Caddy сам получит HTTPS-сертификат.
+alice.example.com {
+	handle /alice-SECRET {
+		rewrite * /
+		reverse_proxy 127.0.0.1:8090
+	}
+	handle {
+		respond 404
+	}
+}

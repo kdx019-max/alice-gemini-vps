@@ -1,0 +1,14 @@
+{
+  "name": "alice-gemini-vps",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Yandex Alice skill webhook powered by Gemini (with optional Serper search), self-hosted on a VPS",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,22 @@
+[Unit]
+Description=Yandex Alice skill webhook (Gemini + Serper)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/node /opt/alice/server.js
+EnvironmentFile=/etc/alice/env
+DynamicUser=yes
+Restart=on-failure
+RestartSec=3
+MemoryMax=150M
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+
+[Install]
+WantedBy=multi-user.target
